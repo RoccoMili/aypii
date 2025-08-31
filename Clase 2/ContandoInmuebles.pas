@@ -62,7 +62,7 @@ begin
 	end;
 end;
 
-{Implemente un módulo quereciba la contabilidad y la imprima.}
+{Implemente un módulo que reciba la contabilidad y la imprima.}
 procedure imprimirContador(m : pares);
 var
 	fil, col : integer;
