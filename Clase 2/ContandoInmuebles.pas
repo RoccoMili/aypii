@@ -22,8 +22,6 @@ begin
 		readln(inmu.tipo);
 		writeln('INGRESA LA CANTIDAD DE HABITACIONES (0-4):');
 		readln(inmu.cantHab);
-		writeln('INGRESA LA CANT DE BANIOS (1-3)');
-		readln(inmu.cantBanos);
 	end;
 end;
 
@@ -64,7 +62,7 @@ begin
 	end;
 end;
 
-{Implemente unmódulo que reciba la contabilidad y la imprima.}
+{Implemente un módulo quereciba la contabilidad y la imprima.}
 procedure imprimirContador(m : pares);
 var
 	fil, col : integer;
