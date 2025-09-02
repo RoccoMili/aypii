@@ -9,6 +9,9 @@ type
     end;
     listaLibros = specialize LinkedList<libro>;
 
+{Un módulo cargarEstante() que lea los libros aleatoriamente (de manera similar a 
+como se generaban los inmuebles) y los almacene ordenados por título. La lectura 
+finaliza cuando se genera un año de edición 2025.}
 procedure cargarEstante(var l : listaLibros);
 var
     lib : libro;
@@ -47,6 +50,9 @@ begin
     end;
 end;
 
+{Un módulo que reciba dos estructuras generadas con el módulo cargarEstante() y 
+retorne una estructura de datos donde estén todos los libros almacenados y 
+ordenados por título.}
 procedure ordenarEstante(var ord : listaLibros; est1, est2 : listaLibros);
 var
     min : libro;
@@ -60,6 +66,8 @@ begin
     end;
 end;
 
+{Un módulo que reciba la estructura generada en b y muestre los títulos de los libros 
+almacenados.}
 procedure imprimirEstante(l : listaLibros);
 begin
     l.reset();
