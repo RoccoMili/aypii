@@ -74,7 +74,10 @@ end;
 
 {Un módulo que reciba la estructura generada en el punto a y retorne una estructura 
 de datos donde se almacenen las duplas (peso, cantidad) de ese peso, ordenadas 
-por peso.}
+por peso.
+
+----------- ACLARACIÓN ---------------
+Está hecho tanto como matriz, como en forma de lista, ante la ambiguedad de ambas posibilidades}
 procedure mergeDuplas(v : vCentros; var m : matrizDuplas; var l : listaDuplas);
 var
     min : paquete;
