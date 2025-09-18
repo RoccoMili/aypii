@@ -1,4 +1,4 @@
-program ejercicioUno;
+program ejercicioDos;
 uses
 	GenericABB;
 type
