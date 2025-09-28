@@ -244,14 +244,12 @@ begin
 end;
 
 {Haga un módulo que reciba el árbol y devuelva la fecha en que comenzaron las ventas. }
-procedure inicioActividades(a : ABBCantVentas; var fec : string);
+function inicioActividades(a : ABBCantVentas) : string;
 begin
-	if (not a.isEmpty()) then begin
-		inicioActividades(a.getLeftChild(), fec);
-		if (a.current().fecha < fec) then
-			fec := a.current().fecha;
-		inicioActividades(a.getRightChild(), fec);
-	end;
+	if (a.hasLeftChild()) then
+		inicioActividades := inicioActividades(a.getLeftChild())
+	else
+		inicioActividades := a.current().fecha;
 end;
 
 var 
@@ -262,7 +260,6 @@ var
 	productoMaximo : ProdResumen;
 	cantMax : integer;
 	fechaMax : string;
-	fechaInicio : string;
 begin
 	randomize;
 
@@ -292,7 +289,5 @@ begin
 	buscarMayorFecha(arbol, cantMax, fechaMax);
 	writeln('FECHA CON MAYOR CANTIDAD: ',fechaMax, ' [',cantMax,']');
 
-	fechaInicio := '9999-12-31';
-	inicioActividades(arbol, fechaInicio);
-	writeln('FECHA DE INICIO DE ACTIVIDADES: ',fechaInicio);
+	writeln('FECHA DE INICIO DE ACTIVIDADES: ',inicioActividades(arbol));
 end.
