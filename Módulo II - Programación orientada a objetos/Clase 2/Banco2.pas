@@ -75,26 +75,33 @@ end;
 {Implemente un módulo que devuelva el número de sucursal que más
 dinero tiene. El dinero de una sucursal es la suma de los saldos de
 todas sus cajas de ahorro.}
-procedure buscarMaximos(m : matrizSucursales; var vMax : vMaximos);
+procedure buscarMaximos(m : matrizSucursales; var v : vMaximos);
 var
 	i : integer;
 	fil, col : integer;
+	max : real;
+	sucMax : integer;
 begin
 	for i:=1 to SUC do
 		v[i] := -1;
 	for fil:=1 to SUC do 
-		for col:=1 to CANT do begin
-			if (v[fil] < m[fil,col].consultarSaldo()) then begin
-				v[fil] := m[fil,col].consultarSaldo();
-			end;
+		for col:=1 to CANT do 
+			v[fil] := v[fil] + m[fil,col].consultarSaldo();
+	max := 0;
+	for i:=1 to SUC do
+		if (v[i] > max) then begin
+			max := v[i];
+			sucMax := i;
 		end;
+	writeln('La sucursal con más dinero es la número ',sucMax,' con un total de $',max:0:2);
 end;
 
 var
 	cajas : matrizSucursales;
-	maximos 
+	maximos : vMaximos;
 BEGIN
 	crearCajas(cajas);
 	simularOperaciones(cajas);
 	printSaldos(cajas);
+	buscarMaximos(cajas, maximos);
 END.
