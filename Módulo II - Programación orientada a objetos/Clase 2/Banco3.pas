@@ -9,6 +9,10 @@ type
     arraySucursales = array [1..SUC] of listaCajas;
     poolCajas = array [1..TOT] of CajaDeAhorro;
 
+{Se desea modificar el programa de la actividad anterior para que cada
+sucursal maneje un número indefinido de cajas de ahorro.
+Implemente un módulo que cree 80 cajas de ahorro de todas las
+sucursales. }
 procedure crearCajas(var v : arraySucursales; var pool : poolCajas);
 var
 	rg : RandomGenerator;
@@ -43,6 +47,8 @@ begin
 		writeln('La operacion NO tuvo exito');
 end;
 
+{Implemente un módulo que simule 50 diferentes operaciones sobre las
+cajas de ahorro (incluyendo cajas de ahorro entre distintas sucursales)}
 procedure simularOperaciones(pool : poolCajas);
 var
 	rg : RandomGenerator;
