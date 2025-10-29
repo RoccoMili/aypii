@@ -1,4 +1,4 @@
-program Verduleria2y3;
+program Verduleria;
 uses GenericLinkedList, UDateTime, URandomGenerator , UBalanza;
 type
 	producto = record
@@ -125,9 +125,3 @@ compras distintas.}
 		printTicket(ticketAct);
 	end;
 end.
-	
-	
-	
-	
-
-

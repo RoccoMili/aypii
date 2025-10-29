@@ -2,6 +2,7 @@ unit UContadorManual;
 {$mode objfpc}
 interface
 	type
+		{Implemente la unidad UContadorManual con el objeto contador}
 		ContadorManual = class
 			private
 				cantidad : integer;

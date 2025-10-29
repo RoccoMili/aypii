@@ -2,3 +2,7 @@ GenericLinkedList.pas
 Inmueble.pas
 GenericABB.pas
 CodigoDisponibleParaElExamen.pas
+UBalanza.pas
+UDateTime.pas
+URandomGenerator.pas
+UCajaDeAhorro.pas
