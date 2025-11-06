@@ -8,7 +8,8 @@ uses UPersona, UCajaDeAhorro, UDateTime, SysUtils;
 				cajaAhorro : CajaDeAhorro;
 				sueldo : real;
 				mesesAntiguedad : integer;
-				function calcularSalario() : real;
+			protected
+				function calcularSalario() : real; virtual;
 			public
 				constructor create(newNombre, newDNI : string; fechaNacimiento : Date; caja : CajaDeAhorro; salario : real);
 				function getSueldo() : real;
@@ -47,10 +48,11 @@ implementation
 	end;
 	procedure Trabajador.cobrarSalario();
 	begin
-		cajaAhorro.depositar(sueldo);
+		cajaAhorro.depositar(self.calcularSalario());
+		mesesAntiguedad := mesesAntiguedad + 1;
 	end;
 	function Trabajador.toString() : ansistring;
 	begin
-		toString := (inherited toString() + ' | [SALDO]: '+ floatToStr(cajaAhorro.consultarSaldo()));
+		toString := (inherited toString() + ' | [SALDO]: '+ FormatFloat('0.00', cajaAhorro.consultarSaldo()));
 	end;
 end.
